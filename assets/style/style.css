@@ -5,6 +5,12 @@ body {
     margin: 0;
 }
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
 .signInContainer {
     background-color: #efefee;
     height: 100vh;
@@ -20,11 +26,13 @@ body {
     width: 450px;
     box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
     padding: 20px 35px;
+    overflow-y: auto;
 }
 
 .column form {
     display: flex;
     flex-direction: column;
+    padding-top: 24px;
 }
 
 .column form input[type="text"],
@@ -53,9 +61,24 @@ body {
     padding: 20px 0;
 }
 
-.column .header .h3 {
+.column h3 {
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
     margin: 0;
+    padding-top: 16px;
+    color: #000;
+}
+
+.column .header span {
+    font-size: 14px;
+}
+
+.column .header img {
+    width: 125px;
+}
+
+.signInMessage {
+    font-size: 14px;
+    font-weight: 400;
 }
