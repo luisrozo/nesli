@@ -1,7 +1,21 @@
 <?php
+require_once("includes/classes/FormSanitizer.php");
+
     if(isset($_POST["submitButton"])) {
-        echo "Form was submitted";
+
+        $firstName = FormSanitizer::sanitizeFormNames($_POST["firstName"]);
+        $lastName = FormSanitizer::sanitizeFormNames($_POST["lastName"]);
+
+        $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
+
+        $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
+        $email2 = FormSanitizer::sanitizeFormEmail($_POST["email2"]);
+
+        $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
+        $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
+
     }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +50,7 @@
 
                     <input type="password" name="password" placeholder="Password" required>
 
-                    <input type="password" name="password" placeholder="Confirm password" required>
+                    <input type="password" name="password2" placeholder="Confirm password" required>
 
                     <input type="submit" name="submitButton" value="Submit">
                 </form>
