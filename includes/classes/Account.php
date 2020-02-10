@@ -106,7 +106,7 @@ class Account {
 
     public function getError($error) {
         if(in_array($error, $this->errors)) {
-            return $error;
+            return "<span class='errorMessage'>$error</span>";
         }
     }
 
